@@ -90,5 +90,22 @@ public class GameGrid {
         return count;
     }
 
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n").append("-".repeat(colNum * 3)).append("\n");
+
+        for (int row = 0; row < rowNum; row++) {
+            sb.append("|  ");
+            for (int col = 0; col < colNum; col++) {
+                sb.append(cells[row][col]).append("  ");
+            }
+            sb.append("|\n");
+        }
+
+        sb.append("\n").append("-".repeat(colNum * 3)).append("\n");
+        return sb.toString();
+    }
 }
 
