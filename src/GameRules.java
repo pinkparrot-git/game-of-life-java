@@ -1,3 +1,5 @@
+package src;
+
 public class GameRules {
     /**
      Conway's Rules:

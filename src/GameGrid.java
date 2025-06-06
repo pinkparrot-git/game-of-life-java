@@ -1,3 +1,5 @@
+package src;
+
 public class GameGrid {
     private final int rowNum;
     private final int colNum;
@@ -39,7 +41,11 @@ public class GameGrid {
         return new Cell(false);
     }
 
-
+    public void setCell(int row, int col, boolean alive) {
+        if (isValid(row, col)) {
+            cells[row][col].setAlive(alive);
+        }
+    }
     public boolean isValid(int row, int col) {
         return row >= 0 && row < rowNum && col >= 0 && col < colNum;
     }
@@ -70,6 +76,17 @@ public class GameGrid {
         return new GameGrid(nextGenerationCells);
     }
 
+    public int getLiveCellCount() {
+        int count = 0;
+        for (int row = 0; row < rowNum; row++) {
+            for (int col = 0; col < colNum; col++) {
+                if (cells[row][col].isAlive()) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
 
 }
 
