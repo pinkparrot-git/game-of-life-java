@@ -1,3 +1,5 @@
+package src;
+
 public class Cell {
     private boolean alive;
 
